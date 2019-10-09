@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 import { reducer } from './reducers'
 
 const store = createStore(reducer)
-// console.log(store.getState)
+console.log('GETSTATE', store.getState())
 
 const rootElement = document.getElementById
 ('root');
