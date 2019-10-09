@@ -1,3 +1,5 @@
+import { ADD } from '../actions'
+
 export const initialState = {
   additionalPrice: 0,
   car: {
@@ -16,6 +18,18 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch(action.type){
+    case ADD:
+        // console.log('STAY PRESSED')
+      return{
+        ...state,
+        state: state.additionalFeatures.map(feature => {
+          if(feature.id === action.payload){
+            return{
+              features: []
+            }
+          }
+        })
+      }
     default:
       return state;
   }
