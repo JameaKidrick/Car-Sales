@@ -16,6 +16,8 @@ export const initialState = {
   ]
 }
 
+// add and remove features are set up but they are not working; i think something is not connected correctly to the reducer since my console.log is not being shown when i click the respective add or remove buttons
+
 export const reducer = (state = initialState, action) => {
   // console.log(state.car.features)
   switch(action.type){
