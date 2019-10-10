@@ -19,28 +19,28 @@ export const initialState = {
 // add and remove features are set up but they are not working; i think something is not connected correctly to the reducer since my console.log is not being shown when i click the respective add or remove buttons
 
 export const reducer = (state = initialState, action) => {
-  // console.log(state.car.features)
+  console.log('reducer')
   switch(action.type){
     case ADD_ITEM:
+      console.log('add')
         return {
           ...state,
-          // console.log(state.car.features)
-          // additionalPrice: (state.additionalPrice + action.payload.price),
+          additionalPrice: (state.additionalPrice + action.payload.price),
           car: {
             ...state.car, 
             features: [...state.car.features, action.payload],
-            additionalFeatures: state.additionalFeatures.filter(element => 
-              !(element.id === action.payload.id)) }
-        }
+          },
+          additionalFeatures: state.additionalFeatures.filter(element => 
+            !(element.id === action.payload.id)) }
     case REMOVE_ITEM:
+      console.log('remove')
         return {...state,
-          // console.log(state.car.features)
-          // additionalPrice: (state.additionalPrice - action.payload.price),
+          additionalPrice: (state.additionalPrice - action.payload.price),
           car: {
             ...state.car, 
             features: state.car.features.filter(element => 
               !(element.id===action.payload.id))},
-            additionalFeatures: [...state.additionalFeatures, action.payload]
+          additionalFeatures: [...state.additionalFeatures, action.payload]
         }
     default:
       return state;
