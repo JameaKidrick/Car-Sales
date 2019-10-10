@@ -6,7 +6,7 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 // ACTIONS
-import { addFeature, ADD } from './actions'
+// import { addFeature, ADD } from './actions'
 
 const App = props => {
   // console.log('propsAPP', props)
